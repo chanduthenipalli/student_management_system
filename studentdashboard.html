@@ -1,0 +1,252 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Form</title>
+    <!-- Favicon -->
+    <link rel="icon" href="path/to/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="path/to/apple-touch-icon.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        
+        .navbar {
+            background-color: #3498db;
+            overflow: hidden;
+        }
+        
+        .navbar img {
+            max-height: 80px;
+            margin-right: 2%;
+            border-radius: 60%;
+        }
+        
+        .navbar a {
+            float: right;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 33px 16px;
+            text-decoration: none;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        
+        .navbar a.login {
+            float: right;
+        }
+        
+        .container {
+            max-width: 700px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .header {
+            background-color: #3498db;
+            color: #fff;
+            padding: 15px;
+            text-align: center;
+            border-radius: 8px 8px 0 0;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease;
+        }
+        
+        .feature h3 {
+            color: #333;
+        }
+        
+        .feature p {
+            color: #555;
+        }
+        
+        .logout-btn {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            align-items: center;
+        }
+        
+        .logout-btn:hover {
+            background-color: #45a049;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .feature {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.3s ease, transform 0.3s ease;
+        }
+        
+        .feature:hover {
+            background-color: #91b995;
+            transform: translateY(5px);
+        }
+        
+        .logout-btn {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 5px;
+            cursor: pointer;
+            align-items: center;
+        }
+        
+        .logout-btn:hover {
+            background-color: #45a049;
+        }
+        
+        .feature:hover {
+            background-color: #c7c7c7;
+        }
+        
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 60px;
+            animation: leftToRight 0.5s ease-in-out;
+        }
+        /* Define animation keyframes */
+        
+        @keyframes leftToRight {
+            0% {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .grid:nth-child(even) {
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-row: 2;
+            animation: leftToRight 0.5s ease-in-out;
+        }
+        
+        .grid:nth-child(odd) {
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            grid-row: 1;
+            animation: leftToRight 0.5s ease-in-out;
+        }
+        /* Define animation keyframes for left to right */
+        
+        @keyframes leftToRight {
+            0% {
+                opacity: 0;
+                transform: translateX(-50px);
+            }
+            100% {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+        
+        .grid:nth-child(even) .feature {
+            grid-column: 2;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <img src="Img/Modern Educational Logo Template .png" alt="The Spicy Hut Logo">
+        <a href="Index.html"><i>LOGOUT</i></a>
+        <a href="Studentmarks.html"><i>MARKS</i></a>
+        <a href="Assignment.html"><i>ASSIGNMENT</i></a>
+        <a href="FORM_ATTendance.html"><i>ATTENDANCE</i></a>
+        <a href="cgpa.html"><i>CGPA</i></a>
+        <a href="CourseRegistration.php"><i>COURSE REGISTRATION</i></a>
+    </div>
+    <div class="container">
+
+
+        <div class="grid">
+            <div class="feature">
+                <img src="img/registration.png" alt="Course Registration Image">
+                <h3>Course Registration</h3>
+                <p>Register for your desired courses, manage your academic schedule, and plan your educational journey efficiently with the Course Registration feature.</p>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="feature">
+                <img src="img/cgpa.jpg" alt="CGPA Calculation Image">
+                <h3>CGPA Calculation</h3>
+                <p>Calculate your Cumulative Grade Point Average (CGPA) accurately, track your academic performance, and set academic goals with the CGPA Calculation feature.</p>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="feature">
+                <img src="img/Attendance1.jpg" alt="Attendance Form Image">
+                <h3>Attendance Form</h3>
+                <p>Submit attendance records, keep track of your class attendance, and ensure academic compliance with the Attendance Form feature.</p>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="feature">
+                <img src="img/Assignment1.jpg" alt="Assignment Submission Image">
+                <h3>Assignment Submission</h3>
+                <p>Submit assignments online, view assignment details, and manage your academic tasks effectively with the Assignment Submission feature.</p>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="feature">
+                <img src="img/mark.jpg" alt="Marks Analysis Image">
+                <h3>Marks Analysis</h3>
+                <p>Analyze your academic performance, view grades, and gain insights into your strengths and areas for improvement with the Marks Analysis feature.</p>
+            </div>
+        </div>
+
+        <div class="grid">
+            <div class="feature">
+                <img src="img/logout.jpg" alt="Logout Image">
+                <h3>Logout</h3>
+                <p>Ensure secure logout, safeguard your data, and end your session confidently, especially in shared environments, with the Logout feature.<a href="Index.html">Logout</a></p>
+            </div>
+        </div>
+
+</body>
+
+</html>

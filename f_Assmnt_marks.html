@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- Include Font Awesome CSS for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
+    <!-- Include Bootstrap CSS if not already included -->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+        }
+        
+        form {
+            max-width: 400px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 80px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .input-group {
+            margin-bottom: 20px;
+        }
+        
+        .input-group-addon {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 80px;
+        }
+        
+        .form-control {
+            width: calc(100% - 32px);
+            padding: 10px;
+            border: 1px solid #ddd;
+            border-radius: 80px;
+        }
+        
+        .row {
+            margin-top: 20px;
+        }
+        
+        .col-md-6 {
+            width: 100%;
+            float: left;
+            margin-bottom: 10px;
+        }
+        
+        .btn-u {
+            width: 100%;
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px;
+            border: none;
+            border-radius: 80px;
+            text-align: center;
+            text-decoration: none;
+            cursor: pointer;
+        }
+        
+        .btn-u:hover {
+            background-color: hsl(123, 40%, 45%);
+        }
+        
+        h1 {
+            text-align: center;
+            font-family: 'Times New Roman', Times, serif;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <h1>Assignment View<i class="fas fa-arrow-down"></i></h1>
+                    <div class="card-body">
+                        <form method="post" action="f_process_marks.php">
+                            <div class="form-group">
+                                <label for="course">Course</label>
+                                <input type="text" class="form-control" id="course" name="course" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="assignmentTitle">Assignment Title</label>
+                                <input type="text" class="form-control" id="assignmentTitle" name="assignmentTitle" required>
+                            </div>
+                            <button type="submit" class="btn-u">submit</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>

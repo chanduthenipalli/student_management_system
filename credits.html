@@ -1,0 +1,237 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CGPA Calculator</title>
+    <style>
+        /* Your CSS styles remain unchanged */
+        
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f4f4f4;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100vh;
+        }
+        
+        .container {
+            max-width: 900px;
+            margin: 50px auto;
+        }
+        
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 80px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        h1 {
+            text-align: center;
+        }
+        
+        label {
+            display: block;
+            margin-bottom: 10px;
+        }
+        
+        input {
+            width: 100%;
+            padding: 8px;
+            margin-bottom: 15px;
+            box-sizing: border-box;
+        }
+        
+        button {
+            background-color: #3498db;
+            color: #fff;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 80px;
+            cursor: pointer;
+        }
+        
+        button:hover {
+            background-color: #45a049;
+        }
+        
+        #courseInputs {
+            margin-top: 15px;
+        }
+        
+        #courseInputs label {
+            margin-bottom: 5px;
+        }
+        
+        #cgpaResult {
+            margin-top: 20px;
+        }
+        
+        #cgpaResult p {
+            text-align: center;
+        }
+        
+        #courseGrades {
+            margin-top: 20px;
+        }
+        
+        #courseGrades p {
+            text-align: center;
+            font-weight: bold;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="container">
+        <form id="cgpaForm">
+            <h1>CGPA Calculator</h1>
+
+            <!-- Student Registration Number Input -->
+            <label for="regNo">Registration Number:</label>
+
+            <input type="text" id="regNo" placeholder="Enter Registration Number" required>
+
+            <!-- Button to Fetch Courses -->
+            <button type="button" onclick="fetchCourses()">Fetch Courses</button>
+            <button type="button" onclick="calculateCGPA()">Calculate CGPA</button>
+
+            <!-- Course Inputs (Populated dynamically) -->
+            <div id="courseInputs"></div>
+
+            <!-- Calculate Button -->
+
+            <!-- Display CGPA -->
+            <div id="cgpaResult"></div>
+
+            <!-- Display Course Grades -->
+            <div id="courseGrades"></div>
+            <button type="button" onclick="window.location.href = 'studentdashboard.html';">BACK</button>
+
+        </form>
+    </div>
+
+    <script>
+        let courseData = [];
+
+        function fetchCourses() {
+            const regNo = document.getElementById('regNo').value;
+
+            // Make an AJAX request to a PHP script to fetch courses
+            const xhr = new XMLHttpRequest();
+            xhr.onreadystatechange = function() {
+                if (xhr.readyState === XMLHttpRequest.DONE) {
+                    if (xhr.status === 200) {
+                        const courses = JSON.parse(xhr.responseText);
+                        displayCourseInputs(courses);
+                    } else {
+                        console.error('Error fetching courses:', xhr.statusText);
+                    }
+                }
+            };
+            xhr.open('GET', `fetch_courses.php?regNo=${regNo}`, true);
+            xhr.send();
+        }
+
+        function displayCourseInputs(courses) {
+            // Display course inputs dynamically
+            const courseInputsDiv = document.getElementById('courseInputs');
+            courseInputsDiv.innerHTML = '';
+
+            courseData = []; // Clear previous data
+
+            courses.forEach(course => {
+                const courseLabel = document.createElement('label');
+                courseLabel.textContent = `${course}:`;
+
+                const creditsInput = document.createElement('input');
+                creditsInput.type = 'number';
+                creditsInput.placeholder = 'Enter Credits';
+                creditsInput.required = true;
+
+                const gradeInput = document.createElement('input');
+                gradeInput.type = 'text';
+                gradeInput.placeholder = 'Enter Grade';
+                gradeInput.required = true;
+
+                courseInputsDiv.appendChild(courseLabel);
+                courseInputsDiv.appendChild(creditsInput);
+                courseInputsDiv.appendChild(gradeInput);
+
+                courseData.push({
+                    courseName: course,
+                    credits: 0,
+                    grade: '',
+                });
+            });
+        }
+
+        function calculateCGPA() {
+            // Your existing CGPA calculation code remains unchanged
+            // Update courseData with user input
+            const creditsInputs = document.querySelectorAll('#courseInputs input[type="number"]');
+            const gradesInputs = document.querySelectorAll('#courseInputs input[type="text"]');
+
+            creditsInputs.forEach((input, index) => {
+                courseData[index].credits = parseInt(input.value);
+            });
+
+            gradesInputs.forEach((input, index) => {
+                courseData[index].grade = input.value;
+            });
+
+            // Calculate CGPA based on the grading criteria
+            const totalPoints = courseData.reduce((total, course) => {
+                const gradePoints = getGradePoints(course.grade);
+                return total + gradePoints * course.credits;
+            }, 0);
+
+            const totalCredits = courseData.reduce((total, course) => total + course.credits, 0);
+
+            const overallCGPA = totalPoints / totalCredits;
+
+            // Display the CGPA result
+            document.getElementById('cgpaResult').innerHTML = `<p>Your CGPA is: <strong>${overallCGPA.toFixed(2)}</strong></p>`;
+            displayCourseGrades();
+        }
+
+        function getGradePoints(grade) {
+            // Define your grading system here
+            switch (grade.toUpperCase()) {
+                case 'S':
+                    return 10.0;
+                case 'A':
+                    return 9.0;
+                case 'B':
+                    return 8.0;
+                case 'C':
+                    return 7.0;
+                case 'D':
+                    return 6.0;
+                case 'E':
+                    return 5.5;
+                default:
+                    return 5.0;
+            }
+        }
+
+        function displayCourseGrades() {
+            // Display individual course grades
+            const courseGradesDiv = document.getElementById('courseGrades');
+            courseGradesDiv.innerHTML = '';
+
+            courseData.forEach((course, index) => {
+                const courseGrade = document.createElement('p');
+                courseGrade.textContent = `${course.courseName}: ${course.credits} credits, Grade ${course.grade}`;
+                courseGradesDiv.appendChild(courseGrade);
+            });
+        }
+    </script>
+</body>
+
+</html>

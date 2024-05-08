@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Pages</title>
+    <style>
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        
+        .navbar {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #3498db;
+            padding: 1px;
+            width: 100%;
+            box-sizing: border-box;
+            color: rgba(255, 255, 255, 0.892);
+        }
+        
+        .logo {
+            max-width: 100px;
+            order: -1;
+            border-radius: 50%;
+        }
+        
+        .slogan {
+            font-size: 24px;
+            text-align: center;
+            font-style: italic;
+            margin-left: 1%;
+        }
+        
+        .login-container {
+            display: flex;
+            justify-content: space-between;
+            width: 80%;
+            max-width: 800px;
+            margin-top: 20px;
+        }
+        
+        .login-box {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 80px;
+            flex: 1;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            margin-right: 10px;
+            text-align: center;
+        }
+        
+        .login-box h2 {
+            color: #333;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+        }
+        
+        .form-group button {
+            background-color: #3498db;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 80px;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        .form-group button:hover {
+            background-color: hsl(123, 40%, 45%);
+        }
+        
+        .icon {
+            max-width: 80px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Navbar Section -->
+    <div class="navbar">
+        <!-- Logo Section -->
+        <div class="logo">
+            <img src="Img/Modern Educational Logo Template .png" alt="Logo" style="max-width: 100%;" />
+        </div>
+
+        <!-- Slogan Section -->
+        <div class="slogan">
+            <p>Knowledge is power; education is its source.</p>
+        </div>
+    </div>
+
+    <!-- Login Section -->
+    <div class="login-container">
+        <!-- Student Login -->
+        <div class="login-box">
+            <img src="Img/students.png" alt="Student Icon" class="icon">
+            <h2>Student Login</h2>
+            <form action="student.html">
+                <div class="form-group">
+                    <button type="submit">Login as Student</button>
+                </div>
+            </form>
+        </div>
+
+        <!-- Faculty Login -->
+        <div class="login-box">
+            <img src="Img/employee.png" alt="Faculty Icon" class="icon">
+            <h2>Faculty Login</h2>
+            <form action="faculty.html">
+                <div class="form-group">
+                    <button type="submit">Login as Faculty</button>
+                </div>
+            </form>
+        </div>
+    </div>
+
+
+</body>
+
+</html>

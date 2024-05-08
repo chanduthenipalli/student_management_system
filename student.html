@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Login Pages</title>
+    <style>
+        /* Navbar styling */
+        
+        .navbar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background-color: #3498db;
+            padding: 1px;
+            width: 100%;
+            box-sizing: border-box;
+            color: rgba(255, 255, 255, 0.892);
+            z-index: 1000;
+            /* Ensure the navbar stays above other elements */
+        }
+        /* Body styling */
+        
+        body {
+            font-family: 'Times New Roman', Times, serif;
+            display: flex;
+            flex-direction: column;
+            /* Ensure content appears below the navbar */
+            height: 100vh;
+            margin: 0;
+            background-color: #f4f4f4;
+        }
+        
+        .logo {
+            max-width: 100px;
+            order: -1;
+            border-radius: 50%;
+        }
+        
+        .slogan {
+            font-size: 24px;
+            font-style: italic;
+            margin-left: 1%;
+            text-align: center;
+            text-decoration: solid;
+            text-wrap: auto;
+        }
+        /* Existing styles for navbar and body remain the same */
+        
+        .login-container {
+            display: flex;
+            justify-content: center;
+            /* Center the login form horizontally */
+            align-items: center;
+            width: 60%;
+            max-width: 600px;
+            margin: auto;
+            /* Center the login form horizontally */
+        }
+        
+        .login-box {
+            background-color: #fff;
+            border: 1px solid #ccc;
+            padding: 20px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            border-radius: 8px;
+            width: 100%;
+            box-sizing: border-box;
+            margin-bottom: 20px;
+            text-align: center;
+            max-width: 400px;
+            /* Adjust the max-width as needed */
+            margin: auto;
+            border-radius: 80px;
+            /* Center the login form horizontally */
+        }
+        /* Other styles remain the same */
+        
+        .login-box h2 {
+            color: #333;
+        }
+        
+        .form-group {
+            margin-bottom: 20px;
+            border-radius: 80px;
+        }
+        
+        .form-group label {
+            display: block;
+            margin-bottom: 8px;
+            font-weight: bold;
+            color: #555;
+        }
+        
+        .form-group input {
+            width: calc(100% - 20px);
+            padding: 10px;
+            box-sizing: border-box;
+            border: 1px solid #ccc;
+            border-radius: 80px;
+            margin-bottom: 10px;
+        }
+        
+        .form-group button {
+            background-color: #3498db;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 80px;
+            cursor: pointer;
+            width: 100%;
+        }
+        
+        .form-group button:hover {
+            background-color: #45a049;
+        }
+        
+        .icon {
+            max-width: 80px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+
+<body>
+    <div class="navbar">
+        <!-- Logo Section -->
+        <div class="logo">
+            <img src="Img/Modern Educational Logo Template .png" alt="Logo" style="max-width: 100%;" />
+        </div>
+
+        <!-- Slogan Section -->
+        <div class="slogan">
+            <p>Knowledge is power; education is its source.</p>
+        </div>
+    </div>
+    <div class="login-container">
+        <!-- Student Login -->
+        <div class="login-box">
+            <img src="Img/students.png" alt="Student Icon" class="icon">
+            <h2>Student Login</h2>
+            <form action="student_login_process.php" method="post">
+
+                <div class="form-group">
+                    <label for="regno">Username:</label>
+                    <input type="text" id="regno" name="regno" required>
+                </div>
+                <div class="form-group">
+                    <label for="password">Password:</label>
+                    <input type="password" id="password" name="password" required>
+                </div>
+                <div class="form-group">
+                    <button type="submit">Login</button>
+                </div>
+            </form>
+        </div>
+        `
+        <!-- Employee Login -->
+    </div>
+
+</body>
+
+</html>

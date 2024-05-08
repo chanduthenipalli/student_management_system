@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Attendance Form</title>
+    <!-- Favicon -->
+    <link rel="icon" href="path/to/favicon.ico" type="image/x-icon">
+    <link rel="apple-touch-icon" sizes="180x180" href="path/to/apple-touch-icon.png">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            /* Make sure the container takes the full viewport height */
+        }
+        
+        .form-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 80px;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            /* Set the width to 100% */
+            max-width: 500px;
+            /* Set the maximum width */
+            box-sizing: border-box;
+        }
+        
+        #attendanceForm {
+            text-align: center;
+        }
+        
+        input[type="text"],
+        input[type="date"],
+        input[type="password"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border-radius: 80px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        
+        input[type="submit"] {
+            background-color: #3498db;
+            color: white;
+            border-radius: 80px;
+            cursor: pointer;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        
+        input[type="submit"],
+        input[type="button"] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border-radius: 80px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        
+        input[type="button"] {
+            background-color: #3498db;
+            color: white;
+            border-radius: 80px;
+            cursor: pointer;
+        }
+        
+        input[type="button"]:hover {
+            background-color: #45a049;
+        }
+    </style>
+</head>
+
+<body>
+
+
+    <div class="container">
+        <div class="form-container">
+            <h2 style="text-align: center; font-family: 'Times New Roman', Times, serif;">Attendance Form</h2>
+            <form id="attendanceForm" action="Student1.php" method="post">
+
+                <label for="regno" style="font-family: 'Times New Roman', Times, serif;">Registration Number:</label>
+                <input type="text" id="regno" name="regno" required>
+
+                <label for="course" style="font-family: 'Times New Roman', Times, serif;">Course ID:</label>
+                <input type="text" id="course" name="course" required>
+
+                <label for="secretCode" style="font-family: 'Times New Roman', Times, serif;">Secret Code:</label>
+                <input type="password" id="secretCode" name="secretCode" required>
+
+                <input type="submit" value="Submit">
+                <input type="button" value="View Attendance" onclick="window.location.href='Attendance.html'">
+                <input type="button" value="Back" onclick="window.location.href='studentdashboard.html'">
+            </form>
+        </div>
+    </div>
+
+</body>
+
+</html>

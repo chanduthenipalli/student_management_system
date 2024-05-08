@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Secret Code Generation</title>
+    <link rel="stylesheet" href="path/to/bootstrap.min.css">
+    <!-- Include Bootstrap CSS file -->
+
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #f4f4f4;
+        }
+        
+        .navbar {
+            background-color: #3498db;
+            overflow: hidden;
+        }
+        
+        .navbar img {
+            max-height: 80px;
+            margin-right: 2%;
+            border-radius: 60%;
+        }
+        
+        .navbar a {
+            float: right;
+            display: block;
+            color: #f2f2f2;
+            text-align: center;
+            padding: 33px 16px;
+            text-decoration: none;
+            font-family: 'Times New Roman', Times, serif;
+        }
+        
+        .navbar a:hover {
+            background-color: #ddd;
+            color: black;
+        }
+        
+        .navbar a.login {
+            float: right;
+        }
+        
+        .container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            /* Make sure the container takes the full viewport height */
+        }
+        
+        .form-container {
+            background-color: white;
+            padding: 40px;
+            border-radius: 80px;
+            box-shadow: 0 0 40px rgba(0, 0, 0, 0.1);
+            width: 100%;
+            /* Set the width to 100% */
+            max-width: 500px;
+            /* Set the maximum width */
+            box-sizing: border-box;
+        }
+        
+        #attendanceForm {
+            text-align: center;
+        }
+        
+        input[type="text"],
+        input[type="date"],
+        input[type="password"],
+        input[type="submit"] {
+            width: 100%;
+            padding: 12px 20px;
+            margin: 8px 0;
+            display: inline-block;
+            border-radius: 80px;
+            border: 1px solid #ccc;
+            box-sizing: border-box;
+        }
+        
+        input[type="submit"] {
+            background-color: #3498db;
+            color: white;
+            border-radius: 80px;
+            cursor: pointer;
+        }
+        
+        input[type="submit"]:hover {
+            background-color: #45a049;
+        }
+        
+        .container {
+            max-width: 600px;
+            margin: 50px auto;
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+        }
+        
+        .reg-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        
+        .row {
+            margin-bottom: 10px;
+        }
+        
+        .col-md-6 {
+            width: 50%;
+            float: left;
+        }
+        
+        .btn-u {
+            background-color: #3498db;
+            color: #fff;
+            padding: 10px 20px;
+            border: none;
+            cursor: pointer;
+            border-radius: 80px;
+        }
+        
+        .btn-u.pull-right {
+            float: right;
+        }
+        
+        #message {
+            margin-top: 10px;
+        }
+        
+        button:hover {
+            background-color: hsl(123, 40%, 45%);
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="row">
+        <div class="col-md-4 col-md-offset-4 col-sm-6 col-sm-offset-3">
+            <div class="reg-header">
+                <h2>Secret Code Generation</h2>
+            </div>
+            <div class="row">
+                <div class="col-md-6">
+                    <form action="CodeGenration.php">
+                        <button onclick="generateCode()" type="submit" class="btn-u pull-right">Generate Code</button>
+                    </form>
+                </div>
+                <p id="message"></p>
+            </div>
+        </div>
+    </div>
+</body>
+
+</html>

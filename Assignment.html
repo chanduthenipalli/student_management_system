@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.0.8/dist/umd/popper.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+    <script>
+        function validateFile() {
+            const fileInput = document.getElementById('assignmentFile');
+            const fileName = fileInput.value;
+            const allowedExtensions = /(\.pdf)$/i;
+
+            if (!allowedExtensions.exec(fileName)) {
+                alert('Please upload only PDF files.');
+                fileInput.value = '';
+                return false;
+            }
+        }
+    </script>
+</head>
+
+<body>
+
+    <div class="container mt-5">
+        <div class="row justify-content-center">
+            <div class="col-md-6">
+                <div class="card">
+                    <div class="card-header">
+                        Assignment Submission Form
+                    </div>
+                    <div class="card-body">
+                        <form method="post" action="submit_assignment.php" enctype="multipart/form-data" onsubmit="return validateFile()">
+                            <div class="form-group">
+                                <label for="regno">Reg No</label>
+                                <input type="text" class="form-control" id="regno" name="regno" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="course">Course</label>
+                                <input type="text" class="form-control" id="course" name="course" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="assignmentTitle">Assignment Title</label>
+                                <input type="text" class="form-control" id="assignmentTitle" name="assignmentTitle" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="assignmentFile">Upload PDF File</label>
+                                <input type="file" class="form-control-file" id="assignmentFile" name="assignmentFile" accept=".pdf" required>
+                            </div>
+                            <button type="submit" class="btn btn-primary mr-2">Submit Assignment</button>
+                            <a href="Assignemnt_marks.html" class="btn btn-success mr-2">View Marks</a>
+                            <a href="studentdashboard.html" class="btn btn-secondary">Back</a>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</body>
+
+</html>
